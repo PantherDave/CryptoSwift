@@ -44,7 +44,9 @@ import Foundation
  */
 
 struct CoinModel: Identifiable, Codable {
-    let id, symbol, name: String
+    let id: String
+    let symbol: String
+    let name: String
     let image: String
     let currentPrice: Double
     let marketCap, marketCapRank, fullyDilutedValuation: Double?
@@ -60,6 +62,62 @@ struct CoinModel: Identifiable, Codable {
     let lastUpdated: String?
     let sparklineIn7d: SparklineIn7d?
     let currentHoldings: Double?
+    
+    init (id: String,
+          symbol: String,
+          name: String,
+          image: String,
+          currentPrice: Double,
+          marketCap: Double? = nil ,
+          marketCapRank: Double? = nil,
+          fullyDilutedValuation: Double? = nil,
+          totalVolume: Double? = nil,
+          high24H: Double? = nil,
+          low24H: Double? = nil,
+          priceChange24H: Double? = nil,
+          priceChangePercentage24H: Double? = nil,
+          marketCapChange24H: Double? = nil,
+          marketCapChangePercentage24H: Double? = nil,
+          circulatingSupply: Double? = nil,
+          totalSupply: Double? = nil,
+          maxSupply: Double? = nil,
+          ath: Double? = nil,
+          athChangePercentage: Double? = nil,
+          athDate: String? = nil,
+          atl: Double? = nil,
+          atlChangePercentage: Double? = nil,
+          atlDate: String? = nil,
+          lastUpdated: String? = nil,
+          sparklineIn7d: SparklineIn7d? = nil,
+          currentHoldings: Double? = nil) {
+        self.id = id
+        self.symbol = symbol
+        self.name = name
+        self.image = image
+        self.currentPrice = currentPrice
+        self.marketCap = marketCap
+        self.marketCapRank = marketCapRank
+        self.fullyDilutedValuation = fullyDilutedValuation
+        self.totalVolume = totalVolume
+        self.high24H = high24H
+        self.low24H = low24H
+        self.priceChange24H = priceChange24H
+        self.priceChangePercentage24H = priceChangePercentage24H
+        self.marketCapChange24H = marketCapChange24H
+        self.marketCapChangePercentage24H = marketCapChangePercentage24H
+        self.circulatingSupply = circulatingSupply
+        self.totalSupply = totalSupply
+        self.maxSupply = maxSupply
+        self.ath = ath
+        self.athChangePercentage = athChangePercentage
+        self.athDate = athDate
+        self.atl = atl
+        self.atlChangePercentage = atlChangePercentage
+        self.atlDate = atlDate
+        self.lastUpdated = lastUpdated
+        self.sparklineIn7d = sparklineIn7d
+        self.currentHoldings = currentHoldings
+    }
 
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
